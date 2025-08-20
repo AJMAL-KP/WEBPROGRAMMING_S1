@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    padding: 0;
+    
     box-sizing: border-box;
 }
 
@@ -20,20 +20,23 @@ body {
 
 .hero {
     height: 100vh;
-
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: #ffeec1;
-    padding-top: 275px;
+    padding: 20px;
     text-align: center;
 }
 
 #intro {
     height: 100vh;
     background-color: #ffffff;
+    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center; 
+    padding: 20px;
 }
 
 .sub {
@@ -45,7 +48,7 @@ body {
 
 .title {
     font-size: 50px;
-    font-weight: 650;
+    font-weight: 600;
     color: #000000;
     margin-bottom: 15px;
 
@@ -54,7 +57,7 @@ body {
 
 h1 {
     font-size: 28px;
-    font-weight: bold;
+    font-weight: 500;
     color: #000000;
     margin-bottom: 15px;
 
@@ -89,10 +92,8 @@ p {
 
 table {
   text-align: left;
-   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+   
+
   font-size: 18px;
   background-color: white;
   padding: 20px;
@@ -105,5 +106,5 @@ td {
   
     font-weight: bold;
     
-    margin-bottom: 15px;
+  
 }
