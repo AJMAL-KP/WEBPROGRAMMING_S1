@@ -10,7 +10,8 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
-    background: #f0f0f0;
+    background: rgb(29, 31, 54);
+    color: rgb(255, 255, 255);
 }
 
 #hero {
@@ -31,10 +32,21 @@ body {
 }
 
 #para {
-    overflow: scroll;
+   
     padding: 20px;
     font-size: 18px;
-    color: #555555;
+    color:aliceblue;
+    margin-bottom: 25px;
+    line-height: 1.4;
+    padding: 5px;
+
+}
+
+#para2 {
+   
+    padding: 20px;
+    font-size: 18px;
+    color:aliceblue;
     margin-bottom: 25px;
     line-height: 1.4;
     padding: 5px;
@@ -42,9 +54,27 @@ body {
 }
 
 
+
 .textsection {
     display: flex;
     justify-content: flex-start;
+    flex-direction: column;
+    padding: 20px;
+    text-align: justify;
+    width: 50%;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+
+
+
+
+}
+
+.textsection2 {
+    display: flex;
+    justify-content: center;
     flex-direction: column;
     padding: 20px;
     text-align: justify;
@@ -62,13 +92,24 @@ body {
 
     display: flex;
     flex-direction: row;
+    
     overflow: hidden;
 }
 
 .imgsection {
     display: flex;
     justify-content: flex-end;
+margin: auto;
+    padding: 20px;
+    width: 50%;
+    align-items: center;
 
+}
+.imgsection2{
+
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 30px;
     padding: 20px;
     width: 50%;
     align-items: center;
@@ -76,20 +117,46 @@ body {
 }
 
 
-.button {
-    position: absolute;
-    top: 67%;
-    left: 45%;
-    background-color: #ffffff;
-    color: #000000;
-    padding: 12px 25px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 500;
 
-}
 
 #img1 {
     width: 80%;
     height: 90%;
+}
+
+
+
+
+
+.float-up {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: #ffffff;
+  color: #000000;
+  border-radius: 50%;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  
+}
+
+.float-up:hover {
+  background: #000000;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+
+
+.float-up .arrow {
+  font-size: 18px;
+  line-height: 1;
+  pointer-events: none;
 }

@@ -9,18 +9,52 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        #para2 {
+        #box1,
+        #box2,
+        #box3 {
 
-            padding: 20px;
-            font-size: 18px;
-            color: #910000;
-            margin-bottom: 25px;
-            line-height: 1.4;
-            padding: 5px;
+            height: 150px;
+            width: 225px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-size: 20px;
+
+
+
+            background-color: aliceblue;
+            color: #000000;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        #sub2 {
-            background-color: aliceblue;
+        #box1 {
+            position: absolute;
+            top: 67%;
+            left: 15%;
+
+        }
+
+        #box2 {
+            position: absolute;
+            top: 67%;
+            left: 42%;
+        }
+
+        #box3 {
+            position: absolute;
+            top: 67%;
+            left: 69%;
+        }
+
+        a :hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -30,89 +64,115 @@
         <img id="home" src="https://kinsta.com/wp-content/uploads/2024/01/wp-advanced-css-techniques.jpg"
             alt="img not loading">
 
-        <a href="#sub" class="button">More Info</a>
+        <a href="#sub1" style="text-decoration: none; cursor: pointer;">
+            <div id="box1"> Inline CSS</div>
+        </a>
+        <a href="#sub2" style="text-decoration: none; cursor: pointer;">
+            <div id="box2"> Internal CSS</div>
+        </a>
+        <a href="#sub3" style="text-decoration: none; cursor: pointer;">
+            <div id="box3"> External CSS</div>
+        </a>
+
+
+         <a href="#hero" class="float-up" aria-label="Back to top" title="Back to top">
+            <span class="arrow" aria-hidden="true">↑</span>
+        </a>
     </div>
 
-    <div class="sub" id="sub">
+
+    <div class="sub" id="sub1">
+       
         <div class="textsection">
-            <h3 style="text-decoration: bold; text-align: center; font-size: 32px;">Cascading Style Sheet</h3> <br>
-            <p id="para">Cascading Style Sheets (CSS) is a style sheet language used for specifying the presentation and
-                styling of a document written in a markup language such as HTML or XML (including XML dialects such as
-                SVG, MathML or XHTML).[2] CSS is a cornerstone technology of the World Wide Web, alongside HTML and
-                JavaScript.[3] <br> <br>
+            <h3 style="text-decoration: bold; text-align: center; font-size: 32px;">Inline CSS</h3> <br>
+            <p id="para">Inline CSS is a method for applying styling directly to a single HTML element, such as a
+                paragraph, by using the style attribute. This approach is often useful for making quick, unique visual
+                adjustments without needing an external stylesheet, as it provides high specificity and overrides other
+                CSS rules. <br> <br> However, because inline styles
+                must be repeated for every element, they are generally not considered a best practice for large
+                projects.
+                This practice clutters the HTML, makes the code harder to read and maintain, and is not easily reusable,
+                which goes against the web development principle of separating content from presentation. <br><br> For
+                this reason,
+                external stylesheets are the recommended method for consistent and manageable styling across a website.
+            
 
-                CSS is designed to enable the separation of content and presentation, including layout, colors, and
-                fonts.[4] This separation can improve content accessibility, since the content can be written without
-                concern for its presentation; provide more flexibility and control in the specification of presentation
-                characteristics; enable multiple web pages to share formatting by specifying the relevant CSS in a
-                separate .css file, which reduces complexity and repetition in the structural content; and enable the
-                .css file to be cached to improve the page load speed between the pages that share the file and its
-                formatting. <br> <br>
-
-                Separation of formatting and content also makes it feasible to present the same markup page in different
-                styles for different rendering methods, such as on-screen, in print, by voice (via speech-based browser
-                or screen reader), and on Braille-based tactile devices. CSS also has rules for alternative formatting
-                if the content is accessed on a mobile device.[5] <br> <br>
-
-                The name cascading comes from the specified priority scheme to determine which declaration applies if
-                more than one declaration of a property match a particular element. This cascading priority scheme is
-                predictable.
-
-                The CSS specifications are maintained by the World Wide Web Consortium (W3C). Internet media type (MIME
-                type) text/css is registered for use with CSS by RFC 2318 (March 1998). The W3C operates a free CSS
-                validation service for CSS documents.[6] <br> <br>
-
-                In addition to HTML, other markup languages support the use of CSS including XHTML, plain XML, SVG, and
-                XUL. CSS is also used in the GTK widget toolkit.
 
 
             </p>
 
         </div>
         <div class="imgsection">
-            <img id="img1"
-                src="https://play-lh.googleusercontent.com/TxjQBGYHvMJsBX5dCvxQ4R-_4N-XrVhW6-p7D7TXanXKZMD8L-UkeMBWO1dtubGVNqU"
-                alt="image">
+            <img id="img1" src="https://www.joonpak.com/images/instructions/inline-css.png" alt="image">
 
         </div>
 
     </div>
+
 
 
 
 
     <div class="sub" id="sub2">
 
-        <div class="imgsection" style="justify-content: flex-start;">
-            <img id="img1"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7NQAgjfvUHJkH0JEQ-b3X4tanP-0pk1YmMw&s"
-                alt="image">
+        <div class="imgsection2">
+            <img id="img2" src="https://www.iitminternware.com/z-rohit/images/css/css3.png" alt="image">
 
         </div>
 
-        <div class="textsection" style="justify-content: flex-end;">
-            <h3 style="text-decoration: bold; text-align: center; font-size: 32px;">Css Syntax</h3> <br>
-            <p id="para2">
-                CSS (Cascading Style Sheets) is the language used to describe the presentation of HTML elements on a
-                webpage. A CSS rule consists of a selector and a declaration block. The selector targets specific HTML
-                elements such as <code>p</code>, <code>h1</code>, <code>.class</code>, or <code>#id</code>. The
-                declaration block, enclosed in curly braces <code>{}</code>, contains one or more property-value pairs
-                that define how the selected elements should appear. <br> Each property, like <code>color</code>,
-                <code>font-size</code>, or <code>margin</code>, is followed by a colon and a value, and ends with a
-                semicolon. For example, <code>p { color: blue; font-size: 18px; }</code> will make all paragraph text
-                blue and set the font size to 18 pixels. br>
-                CSS can be written inline within HTML tags, internally within a
-                <code>&lt;style&gt;</code> block, or externally in a separate . <br>css file. The "cascading" nature of
-                CSS
-                means that styles are applied based on priority rules, including location, specificity, and the use of
-                <code>!important</code>. This structure allows developers to create visually appealing, responsive, and
-                well-organized web pages.
+
+        <div class="textsection2">
+            <h3 style="text-decoration: bold; text-align: center; font-size: 32px;">Internal CSS</h3> <br>
+            <p id="para2">Internal CSS is a method for applying styling rules directly within an HTML document,
+                typically by
+                placing them inside a <code>&lt;style&gt;</code> element within the document's <code>&lt;head&gt;</code>
+                section. This approach is often convenient for styling a single, specific web page without needing to
+                link an external stylesheet, as all the relevant styles are self-contained within that page. br>
+                For
+                instance, a developer could define a blue background for the entire page using the code: <br><br>
+                <code>&lt;head&gt; <br> &lt;style&gt; <br>body { <br> background-color: blue; <br> } <br> &lt;/style&gt; <br>&lt;/head&gt; <br></code>
+                <br>
+
             </p>
 
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <div class="sub" id="sub3">
+        <div class="textsection">
+            <h3 style="text-decoration: bold; text-align: center; font-size: 32px;">External CSS</h3> <br>
+            <p id="para">External CSS is the most widely recommended and efficient method for styling web pages, as it
+                involves creating a separate stylesheet file (typically with a .css extension) that contains all the
+                styling rules for an entire website. <br> This approach promotes a clear separation of concerns, keeping
+                the
+                HTML clean and focused solely on content, while the CSS file handles all presentation aspects. <br><br>
+                The primary advantage is reusability; a single change in
+                the external CSS file instantly updates the styling across all linked pages, ensuring consistency
+                and significantly simplifying maintenance for large or complex projects. <br>Furthermore, external
+                stylesheets leverage browser caching, which can improve website loading performance on subsequent
+                visits, making them the industry standard for professional web development.
+
+
+            </p>
+
+        </div>
+        <div class="imgsection">
+            <img id="img1" src="https://www.iitminternware.com/z-rohit/images/css/css4.png" alt="image">
 
         </div>
 
     </div>
+
+
+
+
+
 
 </body>
 
