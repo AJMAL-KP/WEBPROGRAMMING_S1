@@ -38,9 +38,9 @@
         <a  class="button" onclick="indexof()"> indexOf</a>
         <a  class="button" onclick="lastindexof()"> lastIndexOf</a> 
         <a  class="button" onclick="searchstr()"> Search</a>
-        <a  class="button"> Substring</a>
-        <a  class="button"> Substr</a>
-        <a  class="button"> replace</a> 
+        <a  class="button" onclick="substr()"> Substring</a>
+        <a  class="button" onclick="sub()"> Substr</a>
+        <a  class="button" onclick="Replace()"> replace</a> 
         <a  class="button" onclick="upper()"> UpperCase</a>
         <a  class="button" onclick="lower()"> LowerCase</a>
         <a  class="button" onclick="concat()"> Concat</a><br><br>
@@ -151,6 +151,26 @@ function concat(){
     let z=x.concat(" ", y);
     (z!==-1)?(document.getElementById("resultstr").innerHTML="Concatinated String: "+z) : document.getElementById("resultstr").innerHTML="Invalid input";
 }
+
+
+
+function substr(){
+    let x=document.getElementById("str").value;
+    let a=window.prompt("Enter first index of substring :");
+    let y=window.prompt("Enter last indextof substring:");
+    let z=x.substring(a,y);
+    (z!==-1)?(document.getElementById("resultstr").innerHTML="substring: "+z) : document.getElementById("resultstr").innerHTML="Invalid input";
+}
+
+
+function sub(){
+    let x=document.getElementById("str").value;
+    let a=window.prompt("Enter first index of substring :");
+    let y=window.prompt("Enter last indextof substring:");
+    let z=x.substr(a,y);
+    (z!==-1)?(document.getElementById("resultstr").innerHTML="substring: "+z) : document.getElementById("resultstr").innerHTML="Invalid input";
+}
+
 
 </script>
 </html>

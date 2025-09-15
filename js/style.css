@@ -47,3 +47,14 @@ body {
     text-align: center;
 
 }
+
+
+
+.title {
+    font-size: 50px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 15px;
+
+
+}
