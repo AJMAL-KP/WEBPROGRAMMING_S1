@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js functions</title>
+     <link rel="stylesheet" href="style.css">
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+
+    <div class="hero">
+
+       
+        <h1 id="title">JavaScript String & <br> Number Functions</h1>
+
+        <div class="btntab">
+
+        <a  class="button"> String</a>
+       <a  class="button"> Number</a>
+
+       </div>
+       
+        
+    </div>
+
+    <div id="string" class="hero" >
+        <h2> Enter a string:</h2>
+        
+            <input type="text" id="str"><br><br>
+       
+
+       <div class="btntab">
+
+        <a  class="button" onclick="len()"> Length</a>
+        <a  class="button" onclick="slice()"> Slice</a>
+        <a  class="button" onclick="indexof()"> indexOf</a>
+        <a  class="button" onclick="lastindexof()"> lastIndexOf</a> 
+        <a  class="button" onclick="searchstr()"> Search</a>
+        <a  class="button"> Substring</a>
+        <a  class="button"> Substr</a>
+        <a  class="button"> replace</a> 
+        <a  class="button" onclick="upper()"> UpperCase</a>
+        <a  class="button" onclick="lower()"> LowerCase</a>
+        <a  class="button" onclick="concat()"> Concat</a><br><br>
+
+ </div>
+        <h3 id="resultstr"></h3>
+
+
+
+        
+   
+
+     </div>
+
+
+
+
+     <div id="numbers" class="hero" >
+        <h2> Enter a number:</h2>
+        
+            <input type="number" id="strinput">
+       
+
+       <div class="btntab">
+
+        <a  class="button"> Round</a>
+        <a  class="button"> Ceil</a>
+        <a  class="button"> Floor</a>
+        <a  class="button"> Trunc</a>
+        <a  class="button"> Sign</a>
+        <a  class="button"> Power</a>
+        <a  class="button"> SquareRoot</a>
+        <a  class="button"> Absolute</a>
+        <a  class="button"> Sin</a>
+        <a  class="button"> Cos</a>
+        <a  class="button"> Min</a>
+         <a  class="button"> Max</a>
+          <a  class="button"> Random</a>
+
+ </div>
+        <h3 id="resultstrinput"></h3>
+
+
+
+        
+    
+
+     </div>
+    
+</body>
+
+<script>
+
+function len(){
+    let x=document.getElementById("str").value;
+    document.getElementById("resultstr").innerHTML="Length of the string: "+x.length;
+}
+
+
+
+
+function slice(){
+    let x=document.getElementById("str").value;
+    let y=window.prompt("Enter first index");
+    let z=window.prompt("Enter second index");
+    document.getElementById("resultstr").innerHTML="Sliced string: "+x.slice(y,z);
+}
+
+
+function indexof(){
+    let x=document.getElementById("str").value;
+    let y=window.prompt("Enter element to be found");
+    let z=x.indexOf(y);
+    (z!==-1)?(document.getElementById("resultstr").innerHTML="index: "+z) : document.getElementById("resultstr").innerHTML="not found";
+}
+
+
+function lastindexof(){
+    let x=document.getElementById("str").value;
+    let y=window.prompt("Enter last index of element to be found");
+    let z=x.lastIndexOf(y);
+    (z!==-1)?(document.getElementById("resultstr").innerHTML="last index: "+z) : document.getElementById("resultstr").innerHTML="not found";
+}
+
+
+function searchstr(){
+    let x=document.getElementById("str").value;
+    let y=window.prompt("Enter element to be searched");
+    let z=x.search(y);
+    (z!==-1)?(document.getElementById("resultstr").innerHTML="element found at index: "+z) : document.getElementById("resultstr").innerHTML="not found";
+}
+
+
+function upper(){
+    let x=document.getElementById("str").value;
+    document.getElementById("resultstr").innerHTML="String In UpperCase: "+x.toUpperCase();
+}
+
+function lower(){
+    let x=document.getElementById("str").value;
+    document.getElementById("resultstr").innerHTML="String In LowerCase: "+x.toLowerCase();
+}
+
+
+function concat(){
+    let x=document.getElementById("str").value;
+    let y=window.prompt("Enter string to concat:");
+    let z=x.concat(" ", y);
+    (z!==-1)?(document.getElementById("resultstr").innerHTML="Concatinated String: "+z) : document.getElementById("resultstr").innerHTML="Invalid input";
+}
+
+</script>
+</html>
