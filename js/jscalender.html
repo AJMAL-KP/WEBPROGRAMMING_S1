@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calender
+    </title>
+    <style>
+
+    #sec1{
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    </style>
+</head>
+<body>
+ <div id="sec1">
+    
+    <h3>Enter year:</h3>
+    <input type="number" required id="year"> 
+
+    <h3>Enter Month:</h3>
+    <select id="month">
+<option value="0">January</option>
+<option value="1">February</option>
+<option value="2">March</option>
+<option value="3">April</option>
+<option value="4">May</option>
+<option value="5">June</option>
+<option value="6">July</option>
+<option value="7">August</option>
+<option value="8">September</option>
+<option value="9">October</option>
+<option value="10">November</option>
+<option value="11">December</option>
+</select> <br><br>
+
+    <button onclick="getCalender()"> Get Calender
+
+    </button>
+
+    <p id="cal" ></p>
+
+    </div>
+</body>
+
+    <script>
+
+
+    function getCalender(){
+    if(document.getElementById("year").value==""){
+        document.getElementById("cal").innerHTML="Please enter a year";
+    }
+    else{
+
+     let Calender = "<table><tr><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr><tr>";
+
+    let Year=parseInt(document.getElementById("year").value);
+    let Month=parseInt(document.getElementById("month").value);
+    
+    let date=new Date(Year,Month);
+    let day=date.getDay();
+
+    for(let i=0; i<day; i++)
+    {
+        Calender+="<td></td>"
+    }
+
+    while(date.getMonth()===Month) {
+        Calender+="<td>" + date.getDate() + "</td>";
+        if(date.getDay()%7==6){
+            Calender+="</tr><tr>";
+           
+        }
+         date.setDate(date.getDate()+1);
+
+    }
+  
+   Calender+="</tr></table>";
+   document.getElementById("cal").innerHTML = Calender;
+
+    }
+}
+    </script>
+</html>

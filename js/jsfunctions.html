@@ -17,8 +17,8 @@
 
         <div class="btntab">
 
-        <a  class="button"> String</a>
-       <a  class="button"> Number</a>
+        <a  class="button" href="#string"> String</a>
+       <a  class="button" href="#numbers"> Number</a>
 
        </div>
        
@@ -66,22 +66,22 @@
 
        <div class="btntab">
 
-        <a  class="button"> Round</a>
-        <a  class="button"> Ceil</a>
-        <a  class="button"> Floor</a>
-        <a  class="button"> Trunc</a>
-        <a  class="button"> Sign</a>
-        <a  class="button"> Power</a>
-        <a  class="button"> SquareRoot</a>
-        <a  class="button"> Absolute</a>
-        <a  class="button"> Sin</a>
-        <a  class="button"> Cos</a>
-        <a  class="button"> Min</a>
-         <a  class="button"> Max</a>
-          <a  class="button"> Random</a>
+        <a  class="button" onclick="Round()"> Round</a>
+        <a  class="button" onclick="Ceil()"> Ceil</a>
+        <a  class="button" onclick="Floor()"> Floor</a>
+        <a  class="button" onclick="Trunc()"> Trunc</a>
+        <a  class="button" onclick="Sign()"> Sign</a>
+        <a  class="button" onclick="Power()"> Power</a>
+        <a  class="button" onclick="Squrt()"> SquareRoot</a>
+        <a  class="button" onclick="Abs()"> Absolute</a>
+        <a  class="button" onclick="Sin()"> Sin</a>
+        <a  class="button" onclick="Cos()"> Cos</a>
+        <a  class="button" onclick="Min()"> Min</a>
+         <a  class="button" onclick="Max()"> Max</a>
+          <a  class="button" onclick="Random()"> Random</a>
 
  </div>
-        <h3 id="resultstrinput"></h3>
+        <h3 id="resultstrnum"></h3>
 
 
 
@@ -171,6 +171,126 @@ function sub(){
     (z!==-1)?(document.getElementById("resultstr").innerHTML="substring: "+z) : document.getElementById("resultstr").innerHTML="Invalid input";
 }
 
+
+
+function Replace() {
+    let x=document.getElementById("str").value;
+    let a=window.prompt("Enter pattern to replace :");
+    let y=window.prompt("Enter new pattern to replace:");
+    let z=x.replace(a,y);
+    (z!==-1)?(document.getElementById("resultstr").innerHTML="Replaced string: "+z) : document.getElementById("resultstr").innerHTML="Invalid input";
+
+}
+
+function Round() {
+    let x=document.getElementById("strinput").value;
+    let z=Math.round(x);
+    (z!==-1)?(document.getElementById("resultstrnum").innerHTML="Rounded Value: "+z) : document.getElementById("resultstrnum").innerHTML="Invalid input";
+
+}
+
+function Ceil() {
+    let x=document.getElementById("strinput").value;
+    let z=Math.ceil(x);
+    (z!==-1)?(document.getElementById("resultstrnum").innerHTML="Rounded Value: "+z) : document.getElementById("resultstrnum").innerHTML="Invalid input";
+
+}
+function Floor() {
+    let x=document.getElementById("strinput").value;
+    let z=Math.floor(x);
+    (z!==-1)?(document.getElementById("resultstrnum").innerHTML="Rounded Value: "+z) : document.getElementById("resultstrnum").innerHTML="Invalid input";
+
+}
+
+function Trunc() {
+    let x=document.getElementById("strinput").value;
+    let z=Math.trunc(x);
+    (z!==-1)?(document.getElementById("resultstrnum").innerHTML="Rounded Value: "+z) : document.getElementById("resultstrnum").innerHTML="Invalid input";
+
+}
+
+function Sign() {
+    let x=document.getElementById("strinput").value;
+    let z=Math.sign(x);
+    console.log(z);
+    if(z==0){
+        document.getElementById("resultstrnum").innerHTML="Number is 0";
+    }
+    else if(z=="NaN"){
+        document.getElementById("resultstrnum").innerHTML="Not a number";
+    }
+    else{
+    (z!==-1)?(document.getElementById("resultstrnum").innerHTML="Number is positive") : document.getElementById("resultstrnum").innerHTML="Number is negative";
+    }
+}
+
+function Power() {
+    let x=document.getElementById("strinput").value;
+    let y=window.prompt("Enter the power:");
+    let z=Math.pow(x,y);
+    (z!==-1)?(document.getElementById("resultstrnum").innerHTML=" Result is : "+z) : document.getElementById("resultstrnum").innerHTML="Invalid input";
+
+}
+
+function Squrt() {
+    let x=document.getElementById("strinput").value;
+    let z=Math.sqrt(x);
+    (z!==-1)?(document.getElementById("resultstrnum").innerHTML=" Result is : "+z) : document.getElementById("resultstrnum").innerHTML="Invalid input";
+
+}
+
+function Abs() {
+    let x=document.getElementById("strinput").value;
+    let z=Math.abs(x);
+    (z!==-1)?(document.getElementById("resultstrnum").innerHTML=" Result is : "+z) : document.getElementById("resultstrnum").innerHTML="Invalid input";
+
+}
+
+function Sin() {
+    let x=document.getElementById("strinput").value;
+    let z=Math.sin(x);
+    (z!==-1)?(document.getElementById("resultstrnum").innerHTML=" Result is : "+z) : document.getElementById("resultstrnum").innerHTML="Invalid input";
+
+}
+
+function Cos() {
+    let x=document.getElementById("strinput").value;
+    let z=Math.cos(x);
+    (z!==-1)?(document.getElementById("resultstrnum").innerHTML=" Result is : "+z) : document.getElementById("resultstrnum").innerHTML="Invalid input";
+
+}
+
+function Sin() {
+    let x=document.getElementById("strinput").value;
+    let z=Math.sin(x);
+    (z!==-1)?(document.getElementById("resultstrnum").innerHTML=" Result is : "+z) : document.getElementById("resultstrnum").innerHTML="Invalid input";
+
+}
+
+function Min() {
+    let x=document.getElementById("strinput").value;
+    let a=window.prompt("Enter the value to be compared :");
+    let z=Math.min(x,a);
+    (z!==-1)?(document.getElementById("resultstrnum").innerHTML=" Result is : "+z) : document.getElementById("resultstrnum").innerHTML="Invalid input";
+
+}
+
+
+function Max() {
+    let x=document.getElementById("strinput").value;
+    let a=window.prompt("Enter the value to be compared :");
+    let z=Math.max(x,a);
+    (z!==-1)?(document.getElementById("resultstrnum").innerHTML=" Result is : "+z) : document.getElementById("resultstrnum").innerHTML="Invalid input";
+
+}
+function Random() {
+    let x=Number(document.getElementById("strinput").value);
+    let a=Number(window.prompt("Enter the range :"));
+    
+    let z=x+Math.floor(Math.random()*(a-x));
+    (z!==-1)?(document.getElementById("resultstrnum").innerHTML=" Result is : "+z) : document.getElementById("resultstrnum").innerHTML="Invalid input";
+
+}
 
 </script>
 </html>
