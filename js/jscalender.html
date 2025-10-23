@@ -1,88 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calender
-    </title>
-    <style>
-
-    #sec1{
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Year Calendar</title>
+  <style>
+    #cal {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 20px;
+      margin-top: 20px;
     }
-    </style>
+
+    .month table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #999;
+      padding: 5px;
+      width: 14.28%;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+
+    .month {
+      border: 1px solid #ccc;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .month h4 {
+      margin-top: 0;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
- <div id="sec1">
-    
-    <h3>Enter year:</h3>
-    <input type="number" required id="year"> 
 
-    <h3>Enter Month:</h3>
-    <select id="month">
-<option value="0">January</option>
-<option value="1">February</option>
-<option value="2">March</option>
-<option value="3">April</option>
-<option value="4">May</option>
-<option value="5">June</option>
-<option value="6">July</option>
-<option value="7">August</option>
-<option value="8">September</option>
-<option value="9">October</option>
-<option value="10">November</option>
-<option value="11">December</option>
-</select> <br><br>
+  <h3>Enter year:</h3>
+  <input type="number" required id="year" />
+  <button onclick="getCalender()">Get Calendar</button>
+  <div id="cal"></div>
 
-    <button onclick="getCalender()"> Get Calender
+  <script>
+    function getCalender() {
+      const calContainer = document.getElementById("cal");
+      //calContainer.innerHTML = "";
 
-    </button>
+      const yearInput = document.getElementById("year").value;
+      if (yearInput === "") {
+        calContainer.innerHTML = "Please enter a year";
+        return;
+      }
 
-    <p id="cal" ></p>
+      const Year = parseInt(yearInput);
+      const monthNames = [
+        "January", "February", "March", "April",
+        "May", "June", "July", "August",
+        "September", "October", "November", "December"
+      ];
 
-    </div>
-</body>
+      for (let month = 0; month < 12; month++) {
+        let calendarHTML = `<h4>${monthNames[month]} ${Year}</h4>`;
+        calendarHTML += "<table><tr><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr><tr>";
 
-    <script>
+        let date = new Date(Year, month, 1);
+        let day = date.getDay();
 
-
-    function getCalender(){
-    if(document.getElementById("year").value==""){
-        document.getElementById("cal").innerHTML="Please enter a year";
-    }
-    else{
-
-     let Calender = "<table><tr><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr><tr>";
-
-    let Year=parseInt(document.getElementById("year").value);
-    let Month=parseInt(document.getElementById("month").value);
-    
-    let date=new Date(Year,Month);
-    let day=date.getDay();
-
-    for(let i=0; i<day; i++)
-    {
-        Calender+="<td></td>"
-    }
-
-    while(date.getMonth()===Month) {
-        Calender+="<td>" + date.getDate() + "</td>";
-        if(date.getDay()%7==6){
-            Calender+="</tr><tr>";
-           
+        for (let i = 0; i < day; i++) {
+          calendarHTML += "<td></td>";
         }
-         date.setDate(date.getDate()+1);
 
-    }
-  
-   Calender+="</tr></table>";
-   document.getElementById("cal").innerHTML = Calender;
+        while (date.getMonth() === month) {
+          calendarHTML += `<td>${date.getDate()}</td>`;
 
+          if (date.getDay() % 7 === 6) {
+            calendarHTML += "</tr><tr>";
+          }
+
+          date.setDate(date.getDate() + 1);
+        }
+
+        calendarHTML += "</tr></table>";
+
+        const monthDiv = document.createElement("div");
+        monthDiv.className = "month";
+        monthDiv.innerHTML = calendarHTML;
+        calContainer.appendChild(monthDiv);
+      }
     }
-}
-    </script>
+  </script>
+
+</body>
 </html>

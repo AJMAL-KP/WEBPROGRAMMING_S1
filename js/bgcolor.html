@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+
+    <button id="abc">Click Me</button>
+    <p id="out"></p>
+    
+    
+</body>
+ <script>
+        document.getElementById("abc").addEventListener("click",myFunction);
+
+        function myFunction() {
+
+            let col;
+            let colo='#';
+            for(let i=0;i<6;i++){
+                col=Math.floor(Math.random()*10);
+                colo+=col;
+            }
+            document.body.style.background=colo;
+
+            
+           
+            
+            
+
+        }
+
+    </script>
+</html>
