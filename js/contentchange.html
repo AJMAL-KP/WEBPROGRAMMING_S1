@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Change Text and Image</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #div1,
+        #div2 {
+            width: 60%;
+            max-width: 800px;
+            background-color: rgb(26, 26, 26);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+           
+        }
+
+        #div2 {
+            display: none;
+        }
+
+        img {
+            width: 80%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #fffdfd;
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        <img src="https://www.equitypandit.com/wp-content/uploads/2025/06/AMD.webp" alt="Image 1"><br>
+        <p>
+            Advanced Micro Devices, Inc. (AMD) is an American multinational corporation and technology company
+            headquartered in Santa Clara, California, with significant operations in Austin, Texas.
+            AMD is a hardware and fabless company that designs and develops central processing units (CPUs), graphics
+            processing units (GPUs), field-programmable gate arrays (FPGAs),
+            system-on-chip (SoC), and high-performance computer solutions. AMD serves a wide range of business and
+            consumer markets,
+            including gaming, data centers, artificial intelligence (AI), and embedded systems.
+        </p>
+    </div>
+
+    <div id="div2">
+        <img src="https://etimg.etb2bimg.com/photo/90249015.cms" alt="Image 2"><br>
+        <p>
+            Intel Corporation is an American multinational technology company headquartered in Santa Clara, California.
+            Intel designs, manufactures, and sells computer components such as central processing units (CPUs) and
+            related products for business and consumer markets. It was the world's third-largest semiconductor chip
+            manufacturer by
+            revenue in 2024 and has been included in the Fortune 500 list of the largest United States corporations
+            by
+            revenue since 2007. It was one of the first companies listed on Nasdaq. Since 2025, it is partially owned by
+            the United States government.
+        </p>
+    </div>
+
+    <script>
+        const div1 = document.getElementById('div1');
+        const div2 = document.getElementById('div2');
+
+        function function1() {
+            div1.style.display = 'none';
+            div2.style.display = 'block';
+        }
+
+        function function2() {
+            div2.style.display = 'none';
+            div1.style.display = 'block';
+        }
+
+        div1.addEventListener('mouseenter', function1);
+        div2.addEventListener('mouseleave', function2);
+    </script>
+</body>
+
+</html>

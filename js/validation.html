@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    
+    <style>
+        body {
+    font-family: 'Inter', sans-serif;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffeec1;
+    padding: 20px;
+    text-align: left;
+}
+
+h1{
+    font-size: 40px;
+    font-weight: 600;
+    color: #582b2b;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+td {
+
+    font-size: 20px;
+    padding: 2px;
+    color: #555555;
+    margin-bottom: 25px;
+    line-height: 1.1;
+}
+
+marquee{
+    font-size: 30px;
+    font-weight: 600;
+    color: #992828;
+    margin-bottom: 15px;
+
+}
+
+#form {
+    width :500px;
+}
+
+table{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label{
+    font-weight: bold;
+}
+
+.button {
+    display: inline-block;
+    background-color: #1b1d28;
+    color: #ffffff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    padding-left: 25px;
+}
+
+
+   #v1 {
+      width: 300px;
+      display:none;
+      min-height: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+      color: #af0000;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      padding-left: 10px;
+      box-sizing: border-box;
+      margin: 2px 0;
+    }
+
+    </style>
+</head>
+
+<body>
+    <marquee scrollamount="10" onmouseover="this.stop()" onmouseout="this.start()"> WELCOME TO FRESHER'S WORLD!!!
+    </marquee>
+    <div id="form">
+        <h1>Registration Form</h1>
+         <div id="v1">
+    <p id="error"></p>
+  </div>
+        <form action="" name="myform" onsubmit="return validation()">
+            <table>
+                <tr>
+                    <td>
+                        <label for="Name">Name</label>
+                    </td>
+                    <td>
+                        <input type="text" name="name" placeholder="Enter your Name">
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <label for="Age">Age</label>
+
+                    </td>
+                    <td>
+                        <input type="number" name="age" placeholder="Enter your Age">
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <label for="Number">Phone Number</label>
+                    </td>
+                    <td>
+                        <input type="number" name="number" placeholder="Enter your Number">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="pass">Password</label>
+                    </td>
+                    <td>
+                        <input type="password" name="password" placeholder="Enter your password">
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <label for="secuirity">Select your secuirity question</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="que" >What is your pet name?
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="que">What is your favourite color?
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="radio" name="que">Who is your favourite teacher?
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td>
+                        <label for="answer">Answer of security question</label>
+                    </td>
+                    <td>
+                        <input type="text" name="answer" placeholder="Enter your answer">
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <label for="languages">Languages Known</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">Malayalam
+                        <input type="checkbox">English
+                        <input type="checkbox">Hindi
+
+                    </td>
+                </tr>
+
+
+           
+
+                <tr>
+                    <td><input type="reset" class="button">
+                        <input type="submit" class="button">
+                    </td>
+
+
+
+                </tr>
+
+
+
+
+
+            </table>
+        </form>
+
+
+    </div>
+
+   
+</body>
+ <script>
+
+
+
+     function validation() {
+    let name = document.forms["myform"]["name"].value;
+    let age = document.forms["myform"]["age"].value;  
+    let num = document.forms["myform"]["number"].value;
+    let pass = document.forms["myform"]["password"].value;
+    let ans = document.forms["myform"]["answer"].value;
+    let errorDiv = document.getElementById("v1");
+
+    if (name.trim() === "") {
+        document.getElementById("error").innerHTML = "Name must be entered.";
+        errorDiv.style.display = 'block';
+        return false;
+    }
+
+    if(age.trim()==="" || isNaN(age)){
+       
+        document.getElementById("error").innerHTML="Must enter an age"
+        errorDiv.style.display = 'block';
+        return false;
+    } else if(age<18)  {
+         document.getElementById("error").innerHTML="Must be 18 years or older."
+        errorDiv.style.display='block';
+        return false;
+    }
+
+    if (!/^[6-9]\d{9}$/.test(num.trim()) || num.trim()==="" ) {
+    document.getElementById("error").innerHTML = "Enter a valid 10-digit Indian phone number.";
+    errorDiv.style.display = 'block';
+    return false;
+}
+
+
+    if(pass.trim()==="" || pass.length()<8){
+        document.getElementById("error").innerHTML= "Password must be 8 digits or more."
+        errorDiv.style.display = 'block';
+        return false;
+    }
+
+    
+
+       if (ans.trim() === "") {
+        document.getElementById("error").innerHTML = "Name must be entered.";
+        errorDiv.style.display = 'block';
+        return false;
+    }
+
+
+    
+    return true; 
+}
+
+    </script>
+</html>
