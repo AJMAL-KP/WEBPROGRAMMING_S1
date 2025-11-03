@@ -1,20 +1,4 @@
 <style>
-
-    #content{
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        height: 800px;
-        width: 500px;
-    }
-
-
-
-</style>
-
-
-
-<div id="content"><style>
     body {
         font-family: Arial, sans-serif;
         background-color: #f4f4f9;
@@ -154,51 +138,5 @@
 
         const totalmark = m1 + m2 + m3 + m4;
         document.getElementById("result").innerText = "TOTAL : " + totalmark;
-    }
-</script>
-
-
-<form action="gradeCard.php" method="POST">
-
-ENTER YOUR NAME: 
-<input type ="text" id="name" name="name"> <br><br>
-
-ENTER ROLL NO:
-<input type ="number" id="num" name="num"> <br><br>
-
-ASE MARK :
-<input type = "number" id="mark1" name="mark1"> <br><br>
-
-DS MARK:
-<input type = "number" id="mark2" name="mark2" > <br><br>
-
-DFCA MARK:
-<input type = "number" id="mark3" name="mark3"> <br><br>
-
-PYTHON MARK:
-<input type = "number" id="mark4" name="mark4"> <br><br>
-
-<button type="button" id="total" onclick="totalmarks()" > TOTAL </button>
-<p id="result" > </p>
-
-<input type="submit">
-<input type="reset">
-
-</form>
-
-</div>
-
-<script>
-
-    function totalmarks(){
-        const m1= Number(document.getElementById("mark1").value);
-        const m2= Number(document.getElementById("mark2").value);
-        const m3= Number(document.getElementById("mark3").value);
-        const m4= Number(document.getElementById("mark4").value);
-
-        const totalmark = m1 + m2 + m3 + m4 ;
-
-        document.getElementById("result").innerText = "TOTAL : " + totalmark ;
-
     }
 </script>
