@@ -6,7 +6,8 @@
         background-color: #fafafa;
         display: flex;
         justify-content: center;   
-        align-items: center;       
+        align-items: center; 
+        flex-direction:column;      
     }
 
     form {
@@ -48,7 +49,7 @@
 </style>
 
 
-
+<h1>MARK UPDATION</h1>
 <form action="rollno.php" method="POST">
     ROLL NO:
     <select name="rollno">
