@@ -1,23 +1,21 @@
 <?php
 $con = mysqli_connect('localhost', 'root', '', 'student');
 
-// ----------- INSERT MARK ENTRY -----------
+// -------------------- SAVE MARKS --------------------
 if (isset($_POST['save'])) {
     $no     = $_POST['no'];
-    $name   = $_POST['name'];
     $mark1  = $_POST['mark1'];
     $mark2  = $_POST['mark2'];
-    $total  = $_POST['total'];
+    $total  = $mark1 + $mark2;
 
-    $insert = "INSERT INTO marks (rollno, name, mark1, mark2, total)
-               VALUES ('$no', '$name', '$mark1', '$mark2', '$total')";
-    mysqli_query($con, $insert);
+    $update = "UPDATE stud SET mark1='$mark1', mark2='$mark2', total='$total' WHERE no='$no'";
+    mysqli_query($con, $update);
 
-    echo "<script>alert('Marks added successfully!');</script>";
+    echo "<p style='color:green;'>Marks updated successfully!</p>";
 }
 ?>
 
-<!-- ----------- SEARCH FORM ----------- -->
+<!-- -------------------- SEARCH FORM -------------------- -->
 <form method="POST" action="markentry.php">
     <label>Select Roll No:</label>
 
@@ -41,20 +39,10 @@ if (isset($_POST['save'])) {
 <hr>
 
 <?php
-// ----------- SHOW MARK ENTRY TABLE AFTER SEARCH -----------
+// -------------------- SHOW TABLE AFTER SEARCH --------------------
 if (isset($_POST['search']) && !empty($_POST['rollno'])) {
 
     $no = $_POST['rollno'];
-
-    // --------- CHECK IF MARK ALREADY ENTERED ----------
-    $check = mysqli_query($con, "SELECT * FROM marks WHERE rollno='$no'");
-    if (mysqli_num_rows($check) > 0) {
-
-        echo "<script>alert('Marks already entered for this roll number!');</script>";
-        exit; // Stop further execution
-    }
-
-    // -------- FETCH STUDENT DETAILS ----------
     $sql = "SELECT * FROM stud WHERE no='$no'";
     $result = mysqli_query($con, $sql);
     $row = mysqli_fetch_assoc($result);
@@ -63,7 +51,6 @@ if (isset($_POST['search']) && !empty($_POST['rollno'])) {
 ?>
     <form method="POST" action="markentry.php">
         <input type="hidden" name="no" value="<?php echo $row['no']; ?>">
-        <input type="hidden" name="name" value="<?php echo $row['name']; ?>">
 
         <table border="1" cellpadding="8" cellspacing="0">
             <tr>
@@ -78,14 +65,15 @@ if (isset($_POST['search']) && !empty($_POST['rollno'])) {
                 <td><?php echo $row['no']; ?></td>
                 <td><?php echo $row['name']; ?></td>
 
-                <td><input type="number" name="mark1" required></td>
-                <td><input type="number" name="mark2" required></td>
-                <td><input type="number" name="total" required></td>
+                <td><input type="number" name="mark1" value="<?php echo $row['mark1']; ?>"></td>
+                <td><input type="number" name="mark2" value="<?php echo $row['mark2']; ?>"></td>
+
+                <td><?php echo $row['total']; ?></td>
             </tr>
         </table>
 
         <br>
-        <input type="submit" name="save" value="Save">
+        <input type="submit" name="save" value="Update">
         <input type="reset" value="Reset">
     </form>
 
